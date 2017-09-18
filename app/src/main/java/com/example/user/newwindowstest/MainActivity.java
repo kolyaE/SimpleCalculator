@@ -9,8 +9,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    String input="";
-    float resultInt,inputInt1, inputInt2, memorized;
+    String input = "";
+    float resultInt, inputInt1, inputInt2, memorized;
     int operationCode;
     TextView resultTextView;
     Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9,
@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
                 switch (v.getId()) {
                     case R.id.buttonAC:
                         clearTextView();
-                        inputInt1=0;
-                        inputInt2=0;
+                        inputInt1 = 0;
+                        inputInt2 = 0;
                         break;
                     case R.id.button0:
                         decimalPress("0");
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                         decimalPress("9");
                         break;
                     case R.id.buttonDot:
-                        if (!resultTextView.getText().equals("")) {
+                        if (!resultTextView.getText().toString().isEmpty()) {
                             decimalPress(".");
                         }
                         else {
@@ -107,22 +107,21 @@ public class MainActivity extends AppCompatActivity {
                         operationPress(OPERATION_DIV);
                         break;
                     case R.id.buttonResult:
-                        if (!resultTextView.getText().equals("") && operationCode!=OPERATION_NOT_FOUND) {
+                        if (!resultTextView.getText().toString().isEmpty() && operationCode != OPERATION_NOT_FOUND) {
                             inputInt2 = Float.parseFloat(resultTextView.getText().toString());
                             input = "";
                             calculate(inputInt1, inputInt2);
                         }
                         break;
                     case R.id.buttonMPlus:
-                        if (!resultTextView.getText().equals("")) {
+                        if (!resultTextView.getText().toString().isEmpty()) {
                             memorized = Float.parseFloat(resultTextView.getText().toString());
                             clearTextView();
                             Toast.makeText(MainActivity.this, R.string.saved, Toast.LENGTH_SHORT).show();
                         }
                         break;
                     case R.id.buttonMRec:
-                        String memorizedString = memorized+"";
-                        resultTextView.setText(memorizedString);
+                        resultTextView.setText(String.valueOf(memorized));
                         break;
                 }
             }
@@ -163,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
                 setTextView(resultInt);
                 break;
             case OPERATION_DIV:
-                if (inputInt2!=0) {
+                if (inputInt2 != 0) {
                     resultInt = inputInt1 / inputInt2;
                     setTextView(resultInt);
                 }
@@ -173,16 +172,16 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
         }
-        operationCode=OPERATION_NOT_FOUND;
+        operationCode = OPERATION_NOT_FOUND;
     }
 
     protected void decimalPress(String number) {
-        input = input+number;
+        input += number;
         resultTextView.setText(input);
     }
 
     protected void operationPress(int code) {
-        if (!resultTextView.getText().equals("")) {
+        if (!resultTextView.getText().toString().isEmpty()) {
             inputInt1 = Float.parseFloat(resultTextView.getText().toString());
             clearTextView();
             operationCode = code;
