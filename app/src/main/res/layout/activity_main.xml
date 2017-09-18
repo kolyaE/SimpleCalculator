@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/textViewBackground"
+    tools:context="com.example.user.newwindowstest.MainActivity">
+
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/primary"
+        android:gravity="end|center"
+        android:textColor="@color/textViewText"
+        android:textSize="60sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3" />
+
+    <Button
+        android:id="@+id/buttonAC"
+        android:layout_below="@+id/resultTextView"
+        android:text="@string/ac"
+        style="@style/buttonOperations" />
+
+    <Button
+        android:id="@+id/buttonMRec"
+        android:layout_toEndOf="@id/buttonAC"
+        android:layout_below="@id/resultTextView"
+        android:text="@string/mr"
+        style="@style/buttonOperations"/>
+
+    <Button
+        android:id="@+id/buttonMPlus"
+        android:layout_below="@id/resultTextView"
+        android:layout_toEndOf="@id/buttonMRec"
+        android:text="@string/m"
+        style="@style/buttonOperations"/>
+
+    <Button
+        android:id="@+id/buttonDiv"
+        android:layout_below="@id/resultTextView"
+        android:layout_toEndOf="@id/buttonMPlus"
+        android:text="@string/Div"
+        style="@style/buttonOperations"/>
+
+    <Button
+        android:id="@+id/button7"
+        style="@style/buttonDecimal"
+        android:layout_below="@+id/buttonAC"
+        android:text="@string/_7" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_toEndOf="@id/button7"
+        android:layout_below="@id/buttonMRec"
+        android:text="@string/_8"
+        style="@style/buttonDecimal"/>
+
+    <Button
+        android:id="@+id/button9"
+        style="@style/buttonDecimal"
+        android:layout_below="@id/buttonMPlus"
+        android:layout_toEndOf="@id/button8"
+        android:text="@string/_9" />
+
+    <Button
+        android:id="@+id/buttonMulti"
+        android:layout_below="@id/buttonDiv"
+        android:layout_toEndOf="@id/button9"
+        android:text="@string/Multi"
+        style="@style/buttonOperations"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button7"
+        android:text="@string/_4"
+        style="@style/buttonDecimal"/>
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_toEndOf="@id/button4"
+        android:layout_below="@+id/button8"
+        android:text="@string/_5"
+        style="@style/buttonDecimal"/>
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_toEndOf="@id/button5"
+        android:layout_below="@+id/button9"
+        android:text="@string/_6"
+        style="@style/buttonDecimal"/>
+
+    <Button
+        android:id="@+id/buttonMin"
+        android:layout_toEndOf="@id/button6"
+        android:layout_below="@+id/buttonMulti"
+        android:text="@string/Minus"
+        style="@style/buttonOperations"/>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button4"
+        android:text="@string/_1"
+        style="@style/buttonDecimal"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_below="@+id/button5"
+        android:layout_toEndOf="@id/button1"
+        android:text="@string/_2"
+        style="@style/buttonDecimal"/>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_below="@id/button6"
+        android:layout_toEndOf="@id/button2"
+        android:text="@string/_3"
+        style="@style/buttonDecimal"/>
+
+    <Button
+        android:id="@+id/buttonPlus"
+        android:layout_below="@id/buttonMin"
+        android:layout_toEndOf="@id/button3"
+        android:text="@string/Plus"
+        style="@style/buttonOperations"/>
+
+    <Button
+        android:id="@+id/button0"
+        android:text="@string/_0"
+        android:layout_below="@id/button1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        style="@style/buttonDecimal"/>
+
+    <Button
+        android:id="@+id/buttonDot"
+        android:text="@string/Dot"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/button2"
+        android:layout_toEndOf="@+id/button0"
+        style="@style/buttonDecimal"/>
+
+    <Button
+        android:id="@+id/buttonResult"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/button3"
+        android:layout_toEndOf="@+id/buttonDot"
+        android:text="@string/Result"
+        style="@style/buttonResultStyle"/>
+
+</RelativeLayout>
